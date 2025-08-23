@@ -13,9 +13,11 @@
 
     <header
         class="bg-red-500 dark:bg-red-700 p-4 md:p-6 shadow-lg flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0">
-        <h1 class="text-2xl md:text-3xl font-bold text-white">
-            Meal<span class="bg-green-500 text-white px-2 rounded">hub</span>
-        </h1>
+        <a onclick="getRandomMeal()">
+            <h1 class="text-2xl md:text-3xl font-bold text-white">
+                Meal<span class="bg-green-500 text-white px-2 rounded">hub</span>
+            </h1>
+        </a>
 
         <div class="flex w-full md:w-1/2">
             <input type="text" id="search" placeholder="Search for a your favourite meal..."
@@ -31,12 +33,29 @@
         </div>
     </header>
 
+    <div class="flex">
+        <aside id="sidebar"
+            class="fixed md:static top-0 left-0 w-64 h-full bg-white dark:bg-gray-800 shadow-lg p-4 transform -translate-x-full md:translate-x-0 transition-transform duration-300 z-50"
+            style="margin-top:1%;">
+            <h2 class="text-lg font-bold mb-3">Categories</h2>
+            <ul id="categories" class="space-y-2"></ul>
+        </aside>
+
+        <main id="meals" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 flex-1 md:ml-64 pb-20"
+            style="margin-left: 0;"></main>
+
+    </div>
+
+    <div id="overlay" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 hidden" onclick="toggleSidebar()">
+    </div>
 
 
-    <footer class="bg-white dark:bg-gray-900">
+    <script src="assest/app.js"></script>
+
+    <footer class="bg-gray-900 text-white p-4 text-center ">
         <div class="px-4 py-6 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
             <span class="text-sm text-gray-500 dark:text-gray-300 sm:text-center">© 2025 <a
-                    href="https://flowbite.com/">| ce25260033™</a> | Kaveesha Sithum |  All Rights Reserved.
+                    href="https://flowbite.com/">| ce25260033™</a> | Kaveesha Sithum | All Rights Reserved.
             </span>
             <div class="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
                 <a href="#" class="text-gray-400 hover:text-gray-900 dark:hover:text-white">
@@ -56,15 +75,7 @@
                     </svg>
                     <span class="sr-only">Discord community</span>
                 </a>
-                <a href="#" class="text-gray-400 hover:text-gray-900 dark:hover:text-white">
-                    <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                        viewBox="0 0 20 17">
-                        <path fill-rule="evenodd"
-                            d="M20 1.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.344 8.344 0 0 1-2.605.98A4.13 4.13 0 0 0 13.85 0a4.068 4.068 0 0 0-4.1 4.038 4 4 0 0 0 .105.919A11.705 11.705 0 0 1 1.4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 4.1 9.635a4.19 4.19 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 0 14.184 11.732 11.732 0 0 0 6.291 16 11.502 11.502 0 0 0 17.964 4.5c0-.177 0-.35-.012-.523A8.143 8.143 0 0 0 20 1.892Z"
-                            clip-rule="evenodd" />
-                    </svg>
-                    <span class="sr-only">Twitter page</span>
-                </a>
+
                 <a href="#" class="text-gray-400 hover:text-gray-900 dark:hover:text-white">
                     <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                         viewBox="0 0 20 20">
