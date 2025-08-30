@@ -42,8 +42,8 @@ function filterByCategory(category) {
 }
 
 function searchMeal() {
-    let query = searchInput.value;
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`)
+    let meal_name = searchInput.value;
+    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${meal_name}`)
         .then(res => res.json())
         .then(data => displayMeals(data.meals))
         .catch(err => console.error(err));
